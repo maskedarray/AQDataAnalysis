@@ -217,11 +217,14 @@ for column1 in combined_df.columns:
 
 del column1, column2
 
+#%% make bar plots
+
+fig = px.bar(corr, y = corr['US-Embassy'])
+plot(fig)
 
 
-
-
-
+fig2 = px.bar(mae, y = mae['US-Embassy'].astype(float))
+plot(fig2)
 
 
 

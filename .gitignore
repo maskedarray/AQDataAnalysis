@@ -20,3 +20,9 @@ metstation2.csv
 renke-cleaned.csv
 temp-plot.html
 us-cleaned.csv
+
+__pycache__/
+combinedAQI.csv
+combinedAQIBand.csv
+combined_daily_data.csv
+
