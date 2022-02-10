@@ -1,0 +1,18 @@
+{
+"type": "FeatureCollection",
+"features": [
+{ "type": "Feature", "properties": { "location": "Met Station", "type": "Reference" }, "geometry": { "type": "Point", "coordinates": [ 74.324667011237082, 31.542565189837347 ] } },
+{ "type": "Feature", "properties": { "location": "EPD Gulberg", "type": "Reference" }, "geometry": { "type": "Point", "coordinates": [ 74.338321524152875, 31.511579422313474 ] } },
+{ "type": "Feature", "properties": { "location": "Dental College", "type": "Reference" }, "geometry": { "type": "Point", "coordinates": [ 74.463728227740731, 31.580127144483225 ] } },
+{ "type": "Feature", "properties": { "location": "US-Embassy", "type": "Reference" }, "geometry": { "type": "Point", "coordinates": [ 74.336076811047235, 31.559984433931433 ] } },
+{ "type": "Feature", "properties": { "location": "SDSA LUMS", "type": "Low-Cost" }, "geometry": { "type": "Point", "coordinates": [ 74.407245580032338, 31.469548449258689 ] } },
+{ "type": "Feature", "properties": { "location": "PAir-GardenTown", "type": "Low-Cost" }, "geometry": { "type": "Point", "coordinates": [ 74.306762, 31.501559 ] } },
+{ "type": "Feature", "properties": { "location": "PAir-DefenceChowk", "type": "Low-Cost" }, "geometry": { "type": "Point", "coordinates": [ 74.3735, 31.4859 ] } },
+{ "type": "Feature", "properties": { "location": "PAir-IqbalTown", "type": "Low-Cost" }, "geometry": { "type": "Point", "coordinates": [ 74.284233, 31.510158 ] } },
+{ "type": "Feature", "properties": { "location": "PAir-AkbarChowk", "type": "Low-Cost" }, "geometry": { "type": "Point", "coordinates": [ 74.301385, 31.468374 ] } },
+{ "type": "Feature", "properties": { "location": "PAir-Township", "type": "Low-Cost" }, "geometry": { "type": "Point", "coordinates": [ 74.309754, 31.444512 ] } },
+{ "type": "Feature", "properties": { "location": "PAir-DHAPhase2", "type": "Low-Cost" }, "geometry": { "type": "Point", "coordinates": [ 74.404699, 31.480284 ] } },
+{ "type": "Feature", "properties": { "location": "PAir-Anarkali", "type": "Low-Cost" }, "geometry": { "type": "Point", "coordinates": [ 74.310783, 31.565131 ] } },
+{ "type": "Feature", "properties": { "location": "PAir-Harbanspura", "type": "Low-Cost" }, "geometry": { "type": "Point", "coordinates": [ 74.412914, 31.570236 ] } }
+]
+}

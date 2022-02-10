@@ -159,6 +159,9 @@ del column
 
 combined_df = combined_df.set_index('time')
 
+combined_df.drop(columns = ["Green Town", "Wagha Town"], inplace = True)
+#reference_names = ['US-Embassy', 'Met Station', 'EPA Gulberg', 'Dental College']
+#combined_df = combined_df.drop(columns = reference_names)
 
 #%%
 
@@ -182,10 +185,10 @@ plot(fig)
 
 #%%
 # compute pearson correlation
-combined_df = combined_df.rename(columns = {'PurpleAir-0': 'Pair-GardenTown', 'PurpleAir-2': 'Pair-DefenceChowk',
-                              'PurpleAir-4': 'Pair-IqbalTown', 'PurpleAir-6': 'Pair-AkbarChowk',
-                              'PurpleAir-8': 'Pair-Township', 'PurpleAir-10': 'Pair-DHAPhase2',
-                              'PurpleAir-12': 'Pair-Anarkali', 'PurpleAir-14': 'Pair-Harbanspura'})
+combined_df = combined_df.rename(columns = {'PurpleAir-0': 'PAir-GardenTown', 'PurpleAir-2': 'PAir-DefenceChowk',
+                              'PurpleAir-4': 'PAir-IqbalTown', 'PurpleAir-6': 'PAir-AkbarChowk',
+                              'PurpleAir-8': 'PAir-Township', 'PurpleAir-10': 'PAir-DHAPhase2',
+                              'PurpleAir-12': 'PAir-Anarkali', 'PurpleAir-14': 'PAir-Harbanspura'})
 combined_df2019 = combined_df[combined_df.index.year == 2019]
 combined_df2020 = combined_df[combined_df.index.year == 2020]
 combined_df2021 = combined_df[combined_df.index.year == 2021]
@@ -225,6 +228,18 @@ plot(fig)
 
 fig2 = px.bar(mae, y = mae['US-Embassy'].astype(float))
 plot(fig2)
+
+#%%
+
+fig = px.imshow(mae, text_auto = '.0f', template= 'simple_white')
+fig.update_layout(title_text='Mean Absolute Error (ug/m3)', title_x=0.5)
+plot(fig)
+
+#%%
+
+
+
+
 
 
 

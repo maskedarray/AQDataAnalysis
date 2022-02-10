@@ -43,7 +43,7 @@ combinedAQI_df = combinedAQI_df.set_index('time')
 
 #%% plot combined AQI
 
-combined_df_plot = combinedAQIBand_df.rename(columns = {'PurpleAir-0': 'Pair-GardenTown', 'PurpleAir-2': 'Pair-DefenceChowk',
+combined_df_plot = combined_df.rename(columns = {'PurpleAir-0': 'Pair-GardenTown', 'PurpleAir-2': 'Pair-DefenceChowk',
                               'PurpleAir-4': 'Pair-IqbalTown', 'PurpleAir-6': 'Pair-AkbarChowk',
                               'PurpleAir-8': 'Pair-Township', 'PurpleAir-10': 'Pair-DHAPhase2',
                               'PurpleAir-12': 'Pair-Anarkali', 'PurpleAir-14': 'Pair-Harbanspura'})
@@ -101,15 +101,15 @@ def mape_compute(df):
 #%% convert to aqi bands
 
 def to_aqiband(aqi_value):
-    if aqi_value <= 50:
+    if aqi_value <= 100:
         return 1
-    elif aqi_value <= 100:
-        return 2
-    elif aqi_value <= 150:
-        return 3
     elif aqi_value <= 200:
-        return 4
+        return 2
     elif aqi_value <= 300:
+        return 3
+    elif aqi_value <= 400:
+        return 4
+    elif aqi_value <= 500:
         return 5
     else:
         return 6
@@ -137,15 +137,36 @@ combinedAQI_df.to_csv('combinedAQI.csv')
 
 
 
+#%%
+
+df = combinedAQIBand_df[['US-Embassy', 'EPA Gulberg', 'Met Station',
+                                 'Dental College']]
+
+for column in df.columns:
+    print(df[column][df[column] == 5].count())
 
 
+df2 = combinedAQIBand_df.max(axis = 1)
+
+df2.value_counts(dropna = False)
+
+#%%
+colors1 = ['#19E601', '#93FF26', '#F5F000', '#F5B801', '#FF075A', '#7D042C']
+colors2 = ['#19E601', '#F5F000', '#F5B801', '#FF075A', '#BE25CC','#7D042C']
+fig = go.Figure()
+fig.add_trace(go.Bar( x = ['Good', "Moderate", "Unhealthy (Sensitive)", "Unhealthy", "Very Unhealthy", "Hazardous"],
+                      y = [89    , 653           , 186                  , 97    , 58         , 6],
+                     showlegend = False, marker_color=colors2))
+fig.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
+fig.update_xaxes(title = "Time", showline=True, linewidth=2, linecolor='black', mirror=True)
+fig.update_yaxes(title = 'Number of Days', showline=True, linewidth=2, linecolor='black', mirror=True)
 
 
+plot(fig)
+ 
+del df2, column, df
 
-
-
-
-
+#%%
 
 
 
